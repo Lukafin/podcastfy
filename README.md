@@ -61,6 +61,54 @@ python -m podcastfy.client --url <url1> --url <url2>
 
 Try [HuggingFace 🤗 space app](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) for a simple use case (URLs -> Audio).
 
+
+
+## REST API
+
+Podcastfy also provides a REST API for generating podcasts. The API is implemented using Flask and can be accessed via HTTP GET requests.
+
+### Endpoint
+
+`GET /generate_podcast`
+
+### Parameters
+
+- `url`: One or more URLs to generate the podcast from. Multiple URLs can be provided by repeating the `url` parameter.
+
+### Response
+
+The API returns an MP3 file containing the generated podcast.
+
+### Error Handling
+
+- If no URLs are provided, the API returns a 400 error with the message "Error: No URLs provided".
+- If an error occurs during podcast generation, the API returns a 500 error with a description of the error.
+
+### Example Usage
+
+#### Using a web browser
+
+1. Start the server:
+   ```
+   python -m podcastfy.server
+   ```
+2. Open your web browser and navigate to:
+   ```
+   http://localhost:5000/generate_podcast?url=https://example.com&url=https://another-example.com
+   ```
+3. The browser will download the generated MP3 file.
+
+#### Using curl
+
+To generate a podcast and save it as `podcast.mp3`:
+
+```bash
+curl "http://localhost:5000/generate_podcast?url=https://example.com&url=https://another-example.com" --output podcast.mp3
+```
+
+This command will download the generated podcast and save it as `podcast.mp3` in your current directory.
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request - see [Open Issues](https://github.com/souzatharsis/podcastfy/issues) for ideas. But even more excitingly feel free to fork the repo and create your own app! Please let me know if I could be of help.
