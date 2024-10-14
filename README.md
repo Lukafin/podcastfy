@@ -1,46 +1,77 @@
-# Podcastfy.ai
-[![CodeFactor](https://www.codefactor.io/repository/github/souzatharsis/podcastfy/badge)](https://www.codefactor.io/repository/github/souzatharsis/podcastfy)
+<a name="readme-top"></a>
+
+# Podcastfy.ai 🎙️🤖
 [![PyPi Status](https://img.shields.io/pypi/v/podcastfy)](https://pypi.org/project/podcastfy/)
 [![Downloads](https://pepy.tech/badge/podcastfy)](https://pepy.tech/project/podcastfy)
 [![Issues](https://img.shields.io/github/issues-raw/souzatharsis/podcastfy)](https://github.com/souzatharsis/podcastfy/issues)
+[![Documentation Status](https://readthedocs.org/projects/podcastfy/badge/?version=latest)](https://podcastfy.readthedocs.io/en/latest/?badge=latest)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+![GitHub Repo stars](https://img.shields.io/github/stars/souzatharsis/podcastfy)
 
-Transforming Multi-Sourced Text into Captivating Multi-Lingual Audio Conversations with GenAI
+Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
 
 https://github.com/user-attachments/assets/f1559e70-9cf9-4576-b48b-87e7dad1dd0b
 
-Podcastfy is an open-source Python package that transforms web content, PDFs, and text into engaging, multi-lingual audio conversations using GenAI. 
+Podcastfy is an open-source Python package that transforms multi-modal content (text, images) into engaging, multi-lingual audio conversations using GenAI. Input content include websites, PDFs, youtube videos as well as images.
 
-Unlike UI-based tools focused primarily on note-taking or research synthesis (e.g. NotebookLM ❤️), Podcastfy focuses on the programmatic and bespoke generation of engaging, conversational transcripts and audio from a multitude of text sources therefore enabling customization and scale.
+Unlike UI-based tools focused primarily on note-taking or research synthesis (e.g. NotebookLM ❤️), Podcastfy focuses on the programmatic and bespoke generation of engaging, conversational transcripts and audio from a multitude of multi-modal sources enabling customization and scale.
 
-## Audio Examples
+## Audio Examples 🔊
+This sample collection is also [available at audio.com](https://audio.com/thatupiso/collections/podcastfy).
 
-This sample collection is also [available at audio.com](https://audio.com/thatupiso/collections/podcastfy):
-- [English] Youtube Video from YCombinator on LLMs: ([audio](https://audio.com/thatupiso/audio/ycombinator-llms) | [youtube](https://www.youtube.com/watch?v=eBVi_sLaYsc))
-- [English] Book pdf Networks, Crowds, and Markets: [audio](https://audio.com/thatupiso/audio/networks)
-- [English] Research paper on Climate Change in France: ([audio](https://audio.com/thatupiso/audio/agro-paper) | [pdf](./data/pdf/s41598-024-58826-w.pdf))
-- [English] Personal website: ([audio](https://audio.com/thatupiso/audio/tharsis) | [website](https://www.souzatharsis.com))
-- [English] Personal website + youtube video: ([audio](https://audio.com/thatupiso/audio/tharsis-ai) | [website](https://www.souzatharsis.com) | [youtube](https://www.youtube.com/watch?v=sJE1dE2dulg))
-- [French] Website: ([audio](https://audio.com/thatupiso/audio/podcast-fr-agro) | [website](https://agroclim.inrae.fr/))
-- [Portuguese-BR] News article: ([audio](https://audio.com/thatupiso/audio/podcast-thatupiso-br) | [website](https://noticias.uol.com.br/eleicoes/2024/10/03/nova-pesquisa-datafolha-quem-subiu-e-quem-caiu-na-disputa-de-sp-03-10.htm))
-  
-## Quickstart
+### Images
+
+| Image Set | Description | Audio |
+|:--|:--|:--|
+| <img src="data/images/Senecio.jpeg" alt="Senecio, 1922 (Paul Klee)" width="20%" height="auto"> <img src="data/images/connection.jpg" alt="Connection of Civilizations (2017) by Gheorghe Virtosu " width="21.5%" height="auto"> | Senecio, 1922 (Paul Klee) and Connection of Civilizations (2017) by Gheorghe Virtosu  | [<span style="font-size: 25px;">🔊</span>](https://audio.com/thatupiso/audio/output-file-abstract-art) |
+| <img src="data/images/japan_1.jpg" alt="The Great Wave off Kanagawa, 1831 (Hokusai)" width="20%" height="auto"> <img src="data/images/japan2.jpg" alt="Takiyasha the Witch and the Skeleton Spectre, c. 1844 (Kuniyoshi)" width="21.5%" height="auto"> | The Great Wave off Kanagawa, 1831 (Hokusai) and Takiyasha the Witch and the Skeleton Spectre, c. 1844 (Kuniyoshi) | [<span style="font-size: 25px;">🔊</span>](https://audio.com/thatupiso/audio/output-file-japan) |
+| <img src="data/images/taylor.png" alt="Taylor Swift" width="28%" height="auto"> <img src="data/images/monalisa.jpeg" alt="Mona Lisa" width="10.5%" height="auto"> | Pop culture icon Taylor Swift and Mona Lisa, 1503 (Leonardo da Vinci) | [<span style="font-size: 25px;">🔊</span>](https://audio.com/thatupiso/audio/taylor-monalisa) |
+
+### Text
+| Content Type | Description | Audio | Source |
+|--------------|-------------|-------|--------|
+| Youtube Video | YCombinator on LLMs | [Audio](https://audio.com/thatupiso/audio/ycombinator-llms) | [YouTube](https://www.youtube.com/watch?v=eBVi_sLaYsc) |
+| PDF | Book: Networks, Crowds, and Markets | [Audio](https://audio.com/thatupiso/audio/networks) | book pdf |
+| Research Paper | Climate Change in France | [Audio](https://audio.com/thatupiso/audio/agro-paper) | [PDF](./data/pdf/s41598-024-58826-w.pdf) |
+| Website | My Personal Website | [Audio](https://audio.com/thatupiso/audio/tharsis) | [Website](https://www.souzatharsis.com) |
+| Website + YouTube | My Personal Website + YouTube Video on AI | [Audio](https://audio.com/thatupiso/audio/tharsis-ai) | [Website](https://www.souzatharsis.com), [YouTube](https://www.youtube.com/watch?v=sJE1dE2dulg) |
+
+### Multi-Lingual Text
+| Language | Content Type | Description | Audio | Source |
+|----------|--------------|-------------|-------|--------|
+| French | Website | Agroclimate research information | [Audio](https://audio.com/thatupiso/audio/podcast-fr-agro) | [Website](https://agroclim.inrae.fr/) |
+| Portuguese-BR | News Article | Election polls in São Paulo | [Audio](https://audio.com/thatupiso/audio/podcast-thatupiso-br) | [Website](https://noticias.uol.com.br/eleicoes/2024/10/03/nova-pesquisa-datafolha-quem-subiu-e-quem-caiu-na-disputa-de-sp-03-10.htm) |
+
+## Features ✨
+
+- Generate conversational content from multiple-sources and formats (images, websites, YouTube, and PDFs)
+- Customizable transcript and audio generation (e.g. style, language, structure, length)
+- Create podcasts from pre-existing or edited transcripts
+- Support for advanced text-to-speech models (OpenAI and ElevenLabs)
+- Seamless CLI and Python package integration for automated workflows
+- Multi-language support for global content creation (experimental!)
+
+## Updates 🚀
+
+### v0.2.2 release
+- Podcastfy is now multi-modal! Users can generate audio from images as well as text inputs!
+- Added API reference docs and published it to https://podcastfy.readthedocs.io/en/latest/
+
+### v0.2.0 release
+- Users can now customize podcast style, structure, and content
+- Integration with LangChain for better LLM management
+
+## Quickstart 💻
+
+### Prerequisites
+- Python 3.11 or higher
+- `$ pip install ffmpeg` (for audio processing)
 
 ### Setup
-Before installing, ensure you have Python 3.12 or higher installed on your system.
-
 1. Install from PyPI
-
   `$ pip install podcastfy`
 
 2. Set up your [API keys](usage/config.md)
-
-3. Ensure you have ffmpeg installed on your system, required for audio processing
-```
-sudo apt update
-sudo apt install ffmpeg
-```
 
 ### Python
 ```python
@@ -53,76 +84,25 @@ audio_file = generate_podcast(urls=["<url1>", "<url2>"])
 python -m podcastfy.client --url <url1> --url <url2>
 ```
   
-## Usage
+## Usage 💻
 
-- [Python Package](podcastfy.ipynb)
+- [Python Package Quickstart](podcastfy.ipynb)
+
+- [API Reference Manual](https://podcastfy.readthedocs.io/en/latest/podcastfy.html)
 
 - [CLI](usage/cli.md)
 
-Try [HuggingFace 🤗 space app](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) for a simple use case (URLs -> Audio).
+Experience Podcastfy with our [HuggingFace](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) 🤗 Spaces app for a simple URL-to-Audio demo. (Note: This UI app is less extensively tested and capable than the Python package.)
 
+## Customization 🔧
 
+Podcastfy offers a range of [Conversation Customization](usage/conversation_custom.md) options to tailor your AI-generated podcasts. Whether you're creating educational content, storytelling experiences, or anything in between, these configuration options allow you to fine-tune your podcast's tone, length, and format.
 
-## REST API
+## Contributing 🤝
 
-Podcastfy also provides a REST API for generating podcasts. The API is implemented using Flask and can be accessed via HTTP GET requests.
+We welcome contributions! Please submit [Issues](https://github.com/souzatharsis/podcastfy/issues) or Pull Requests. Feel free to fork the repo and create your own applications. We're excited to learn about your use cases!
 
-### Endpoint
-
-`GET /generate_podcast`
-
-### Parameters
-
-- `url`: One or more URLs to generate the podcast from. Multiple URLs can be provided by repeating the `url` parameter.
-
-### Response
-
-The API returns an MP3 file containing the generated podcast.
-
-### Error Handling
-
-- If no URLs are provided, the API returns a 400 error with the message "Error: No URLs provided".
-- If an error occurs during podcast generation, the API returns a 500 error with a description of the error.
-
-### Example Usage
-
-#### Using a web browser
-
-1. Start the server:
-   ```
-   python -m podcastfy.server
-   ```
-2. Open your web browser and navigate to:
-   ```
-   http://localhost:5000/generate_podcast?url=https://example.com&url=https://another-example.com
-   ```
-3. The browser will download the generated MP3 file.
-
-#### Using curl
-
-To generate a podcast and save it as `podcast.mp3`:
-
-```bash
-curl "http://localhost:5000/generate_podcast?url=https://example.com&url=https://another-example.com" --output podcast.mp3
-```
-
-This command will download the generated podcast and save it as `podcast.mp3` in your current directory.
-
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request - see [Open Issues](https://github.com/souzatharsis/podcastfy/issues) for ideas. But even more excitingly feel free to fork the repo and create your own app! Please let me know if I could be of help.
-
-## Features
-
-- Generate engaging, AI-powered conversational content from multiple sources (URLs and PDFs)
-- Create high-quality transcripts from diverse textual information sources
-- Convert pre-existing transcript files into dynamic podcast episodes
-- Support for multiple advanced text-to-speech models (OpenAI and ElevenLabs) for natural-sounding audio
-- Support for multiple languages, enabling global content creation
-- Seamlessly integrate CLI for streamlined workflows
-
-## Example Use Cases
+## Example Use Cases 🎧🎶
 
 1. **Content Summarization**: Busy professionals can stay informed on industry trends by listening to concise audio summaries of multiple articles, saving time and gaining knowledge efficiently.
 
@@ -138,7 +118,7 @@ Contributions are welcome! Please feel free to submit a Pull Request - see [Open
 
 7. **News Briefings**: Commuters can stay informed about daily news during travel time with personalized audio news briefings compiled from their preferred sources.
 
-8. **Educational Content Creation**: Educators can enhance learning accessibility by providing audio versions of course materials, catering to students with different learning styles.
+8. **Educational Content Creation**: Educators can enhance learning accessibility by providing audio versions of course materials, catering to students with different learning preferences.
 
 9. **Book Summaries**: Avid readers can preview books efficiently through audio summaries, helping them make informed decisions about which books to read in full.
 
@@ -149,6 +129,18 @@ Contributions are welcome! Please feel free to submit a Pull Request - see [Open
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
+## Contributors
+
+<a href="https://github.com/souzatharsis/podcastfy/graphs/contributors">
+  <img alt="contributors" src="https://contrib.rocks/image?repo=souzatharsis/podcastfy"/>
+</a>
+
 ## Disclaimer
 
 This tool is designed for personal or educational use. Please ensure you have the necessary rights or permissions before using content from external sources for podcast creation. All audio content is AI-generated and it is not intended to clone real-life humans!
+
+<p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
+    <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
+        ↑ Back to Top ↑
+    </a>
+</p>
