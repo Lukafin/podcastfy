@@ -1,20 +1,37 @@
+<div align="center">
 <a name="readme-top"></a>
 
 # Podcastfy.ai 🎙️🤖
-[![PyPi Status](https://img.shields.io/pypi/v/podcastfy)](https://pypi.org/project/podcastfy/)
-[![Downloads](https://pepy.tech/badge/podcastfy)](https://pepy.tech/project/podcastfy)
-[![Issues](https://img.shields.io/github/issues-raw/souzatharsis/podcastfy)](https://github.com/souzatharsis/podcastfy/issues)
-[![Documentation Status](https://readthedocs.org/projects/podcastfy/badge/?version=latest)](https://podcastfy.readthedocs.io/en/latest/?badge=latest)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-![GitHub Repo stars](https://img.shields.io/github/stars/souzatharsis/podcastfy)
-
-Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
+An Open Source API alternative to NotebookLM's podcast feature: Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
 
 https://github.com/user-attachments/assets/f1559e70-9cf9-4576-b48b-87e7dad1dd0b
 
-Podcastfy is an open-source Python package that transforms multi-modal content (text, images) into engaging, multi-lingual audio conversations using GenAI. Input content include websites, PDFs, youtube videos as well as images.
+[Paper](https://github.com/souzatharsis/podcastfy/blob/main/paper/paper.pdf) |
+[Python Package](https://github.com/souzatharsis/podcastfy/blob/59563ee105a0d1dbb46744e0ff084471670dd725/podcastfy.ipynb) |
+[CLI](https://github.com/souzatharsis/podcastfy/blob/59563ee105a0d1dbb46744e0ff084471670dd725/usage/cli.md) |
+[REST API](https://github.com/souzatharsis/podcastfy/blob/59563ee105a0d1dbb46744e0ff084471670dd725/usage/api.md) |
+[Web App](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) |
+[Feedback](https://github.com/souzatharsis/podcastfy/issues)
 
-Unlike UI-based tools focused primarily on note-taking or research synthesis (e.g. NotebookLM ❤️), Podcastfy focuses on the programmatic and bespoke generation of engaging, conversational transcripts and audio from a multitude of multi-modal sources enabling customization and scale.
+[![status](https://joss.theoj.org/papers/df96ddf0db8d28655f623880b354724c/status.svg)](https://joss.theoj.org/papers/df96ddf0db8d28655f623880b354724c)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/souzatharsis/podcastfy/blob/main/podcastfy.ipynb)
+[![PyPi Status](https://img.shields.io/pypi/v/podcastfy)](https://pypi.org/project/podcastfy/)
+[![Downloads](https://pepy.tech/badge/podcastfy)](https://pepy.tech/project/podcastfy)
+[![Issues](https://img.shields.io/github/issues-raw/souzatharsis/podcastfy)](https://github.com/souzatharsis/podcastfy/issues)
+[![Pytest](https://github.com/souzatharsis/podcastfy/actions/workflows/python-app.yml/badge.svg)](https://github.com/souzatharsis/podcastfy/actions/workflows/python-app.yml)
+[![Docker](https://github.com/souzatharsis/podcastfy/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/souzatharsis/podcastfy/actions/workflows/docker-publish.yml)
+[![Documentation Status](https://readthedocs.org/projects/podcastfy/badge/?version=latest)](https://podcastfy.readthedocs.io/en/latest/?badge=latest)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![GitHub Repo stars](https://img.shields.io/github/stars/souzatharsis/podcastfy)
+</div>
+
+
+
+Podcastfy is an open-source Python package that transforms multi-modal content (text, images) into engaging, multi-lingual audio conversations using GenAI. Input content includes websites, PDFs, YouTube videos, as well as images.
+
+Unlike UI-based tools focused primarily on note-taking or research synthesis (e.g. NotebookLM ❤️), Podcastfy focuses on the programmatic and bespoke generation of engaging, conversational transcripts and audio from a multitude of multi-modal sources, enabling customization and scale.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=souzatharsis/podcastfy&type=Date&theme=dark)](https://api.star-history.com/svg?repos=souzatharsis/podcastfy&type=Date&theme=dark)
 
 ## Audio Examples 🔊
 This sample collection is also [available at audio.com](https://audio.com/thatupiso/collections/podcastfy).
@@ -44,18 +61,23 @@ This sample collection is also [available at audio.com](https://audio.com/thatup
 
 ## Features ✨
 
-- Generate conversational content from multiple-sources and formats (images, websites, YouTube, and PDFs)
-- Customizable transcript and audio generation (e.g. style, language, structure, length)
-- Create podcasts from pre-existing or edited transcripts
-- Support for advanced text-to-speech models (OpenAI and ElevenLabs)
-- Seamless CLI and Python package integration for automated workflows
-- Multi-language support for global content creation (experimental!)
+- Generate conversational content from multiple sources and formats (images, websites, YouTube, and PDFs).
+- Customize transcript and audio generation (e.g., style, language, structure, length).
+- Create podcasts from pre-existing or edited transcripts.
+- Leverage cloud-based and local LLMs for transcript generation (increased privacy and control).
+- Integrate with advanced text-to-speech models (OpenAI, Google,ElevenLabs, and Microsoft Edge).
+- Provide multi-language support for global content creation.
+- Integrate seamlessly with CLI and Python packages for automated workflows.
 
 ## Updates 🚀
 
+### v0.2.3 release
+- Add support for running LLMs locally
+- Enable config for running podcastfy with no API KEYs
+- and [more...](https://github.com/souzatharsis/podcastfy/blob/main/CHANGELOG.md#023---2024-10-15)
+
 ### v0.2.2 release
-- Podcastfy is now multi-modal! Users can generate audio from images as well as text inputs!
-- Added API reference docs and published it to https://podcastfy.readthedocs.io/en/latest/
+- Podcastfy is now multi-modal! Users can generate audio from images + text inputs!
 
 ### v0.2.0 release
 - Users can now customize podcast style, structure, and content
@@ -88,56 +110,48 @@ python -m podcastfy.client --url <url1> --url <url2>
 
 - [Python Package Quickstart](podcastfy.ipynb)
 
-- [API Reference Manual](https://podcastfy.readthedocs.io/en/latest/podcastfy.html)
+- [Python Package Reference Manual](https://podcastfy.readthedocs.io/en/latest/podcastfy.html)
+
+- [REST API Reference Manual](usage/api.md)
 
 - [CLI](usage/cli.md)
 
-Experience Podcastfy with our [HuggingFace](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) 🤗 Spaces app for a simple URL-to-Audio demo. (Note: This UI app is less extensively tested and capable than the Python package.)
+- [Docker Image](usage/docker.md)
+
+- [How to](usage/how-to.md)
+
+Experience Podcastfy with our [HuggingFace](https://huggingface.co/spaces/thatupiso/Podcastfy.ai_demo) 🤗 Spaces app. (Note: This UI app is less extensively tested than the Python package.)
 
 ## Customization 🔧
 
-Podcastfy offers a range of [Conversation Customization](usage/conversation_custom.md) options to tailor your AI-generated podcasts. Whether you're creating educational content, storytelling experiences, or anything in between, these configuration options allow you to fine-tune your podcast's tone, length, and format.
-
-## Contributing 🤝
-
-We welcome contributions! Please submit [Issues](https://github.com/souzatharsis/podcastfy/issues) or Pull Requests. Feel free to fork the repo and create your own applications. We're excited to learn about your use cases!
-
-## Example Use Cases 🎧🎶
-
-1. **Content Summarization**: Busy professionals can stay informed on industry trends by listening to concise audio summaries of multiple articles, saving time and gaining knowledge efficiently.
-
-2. **Language Localization**: Non-native English speakers can access English content in their preferred language, breaking down language barriers and expanding access to global information.
-
-3. **Website Content Marketing**: Companies can increase engagement by repurposing written website content into audio format, providing visitors with the option to read or listen.
-
-4. **Personal Branding**: Job seekers can create unique audio-based personal presentations from their CV or LinkedIn profile, making a memorable impression on potential employers.
-
-5. **Research Paper Summaries**: Graduate students and researchers can quickly review multiple academic papers by listening to concise audio summaries, speeding up the research process.
-
-6. **Long-form Podcast Summarization**: Podcast enthusiasts with limited time can stay updated on their favorite shows by listening to condensed versions of lengthy episodes.
-
-7. **News Briefings**: Commuters can stay informed about daily news during travel time with personalized audio news briefings compiled from their preferred sources.
-
-8. **Educational Content Creation**: Educators can enhance learning accessibility by providing audio versions of course materials, catering to students with different learning preferences.
-
-9. **Book Summaries**: Avid readers can preview books efficiently through audio summaries, helping them make informed decisions about which books to read in full.
-
-10. **Conference and Event Recaps**: Professionals can stay updated on important industry events they couldn't attend by listening to audio recaps of conference highlights and key takeaways.
-
+Podcastfy offers a range of customization options to tailor your AI-generated podcasts:
+- Customize podcast [conversation](usage/conversation_custom.md) (e.g. format, style, voices)
+- Choose to run [Local LLMs](usage/local_llm.md) (156+ HuggingFace models)
+- Set [System Settings](usage/config_custom.md) (e.g. output directory settings)
 
 ## License
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This software is licensed under [Apache 2.0](LICENSE). [Here](usage/license-guide.md) are a few instructions if you would like to use podcastfy in your software.
 
+## Contributing 🤝
+
+We welcome contributions! See [Guidelines](GUIDELINES.md) for more details.
+
+## Example Use Cases 🎧🎶
+
+- **Content Creators** can use `Podcastfy` to convert blog posts, articles, or multimedia content into podcast-style audio, enabling them to reach broader audiences. By transforming content into an audio format, creators can cater to users who prefer listening over reading.
+
+- **Educators** can transform lecture notes, presentations, and visual materials into audio conversations, making educational content more accessible to students with different learning preferences. This is particularly beneficial for students with visual impairments or those who have difficulty processing written information.
+
+- **Researchers** can convert research papers, visual data, and technical content into conversational audio. This makes it easier for a wider audience, including those with disabilities, to consume and understand complex scientific information. Researchers can also create audio summaries of their work to enhance accessibility.
+
+- **Accessibility Advocates** can use `Podcastfy` to promote digital accessibility by providing a tool that converts multimodal content into auditory formats. This helps individuals with visual impairments, dyslexia, or other disabilities that make it challenging to consume written or visual content.
+  
 ## Contributors
 
 <a href="https://github.com/souzatharsis/podcastfy/graphs/contributors">
   <img alt="contributors" src="https://contrib.rocks/image?repo=souzatharsis/podcastfy"/>
 </a>
-
-## Disclaimer
-
-This tool is designed for personal or educational use. Please ensure you have the necessary rights or permissions before using content from external sources for podcast creation. All audio content is AI-generated and it is not intended to clone real-life humans!
 
 <p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
     <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
