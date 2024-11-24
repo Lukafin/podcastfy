@@ -4,12 +4,38 @@ All assume you have podcastfy installed and running.
 
 ## Table of Contents
 
+- [Custom LLM Support](#custom-llm-support)
+- [Running Local LLMs](#running-local-llms)
 - [How to use your own voice in audio podcasts](#how-to-use-your-own-voice-in-audio-podcasts)
 - [How to customize the conversation](#how-to-customize-the-conversation)
 - [How to generate multilingual content](#how-to-generate-multilingual-content)
 - [How to steer the conversation](#how-to-steer-the-conversation)
+- [How to generate longform podcasts](#how-to-generate-longform-podcasts)
 
 
+## Custom LLM Support
+
+Podcastfy offers a range of LLM models for generating transcripts including OpenAI, Anthropic, Google as well as local LLM models.
+
+### Cloud-based LLMs
+
+By default, Podcastfy uses Google's `gemini-1.5-pro-latest` model. To select a particular cloud-based LLM model, users can pass the `llm_model_name` and `api_key_label` parameters to the `generate_podcast` function. See [full list of supported models](https://docs.litellm.ai/docs/providers) for more details.
+
+For example, to use OpenAI's `gpt-4-turbo` model, users can pass `llm_model_name="gpt-4-turbo"` and `api_key_label="OPENAI_API_KEY"`.
+
+```python
+audio_file = generate_podcast(
+    urls=["https://en.wikipedia.org/wiki/Artificial_intelligence"],
+    llm_model_name="gpt-4-turbo",
+    api_key_label="OPENAI_API_KEY"
+)
+```
+
+Remember to have the correct API key label and value in your environment variables (`.env` file).
+
+### Running Local LLMs
+
+See [local_llm.md](local_llm.md) for more details.
 
 ## How to use your own voice in audio podcasts
 
@@ -88,5 +114,31 @@ python -m podcastfy.client --url https://en.wikipedia.org/wiki/Artificial_intell
 ```
 
 
+## How to generate longform podcasts
 
+By default, Podcastfy generates shortform podcasts. However, users can generate longform podcasts by setting the `longform` parameter to `True`.
+
+```python
+audio_file = generate_podcast(
+    urls=["https://example.com/article1", "https://example.com/article2"],
+    longform=True
+)
+```
+
+LLMs have a limited ability to output long text responses. Most LLMs have a `max_output_tokens` of around 4096 and 8192 tokens. Hence, long-form podcast transcript generation is challeging. We have implemented a technique I call "Content Chunking with Contextual Linking" to enable long-form podcast generation by breaking down the input content into smaller chunks and generating a conversation for each chunk while ensuring the combined transcript is coherent and linked to the original input.
+
+By default, shortform podcasts (default configuration) generate audio of about 2-5 minutes while longform podcasts may reach 20-30 minutes.
+
+Users may adjust lonform podcast length by setting the following parameters in your customization params (conversation_config.yaml):
+- `max_num_chunks` (default: 7): Sets maximum number of rounds of discussions.
+- `min_chunk_size` (default: 600): Sets minimum number of characters to generate a round of discussion.
+
+A "round of discussion" is the output transcript obtained from a single LLM call. The higher the `max_num_chunks` and the lower the `min_chunk_size`, the longer the generated podcast will be.
+Today, this technique allows the user to generate long-form podcasts of any length if input content is long enough. However, the conversation quality may decrease and its length may converge to a maximum if `max_num_chunks`/`min_chunk_size` is to high/low particularly if input content length is limited.
+
+Current implementation limitations:
+- Images are not yet supported for longform podcast generation
+- Base LLM model is fixed to Gemini
+
+Above limitations are somewhat easily fixable however we chose to make updates in smaller but quick iterations rather than making all-in changes.
 

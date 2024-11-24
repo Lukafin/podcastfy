@@ -1,5 +1,40 @@
 # Changelog
 
+
+## [0.4.0] - 2024-11-16
+
+### Added
+- Add Google Singlespeaker (Journey) and Multispeaker TTS models 
+- Fixed limitations of Google Multispeaker TTS model: 5000 bytes input limite and 500 bytes per turn limit.
+- Updated tests and docs accordingly
+
+## [0.3.6] - 2024-11-13
+
+### Added
+- Add longform podcast generation support
+  - Users can now generate longer podcasts (20-30+ minutes) using the `--longform` flag in CLI or `longform=True` in Python API
+  - Implements "Content Chunking with Contextual Linking" technique for coherent long-form content
+  - Configurable via `max_num_chunks` and `min_chunk_size` parameters in conversation config
+  - `word_count` parameter removed from conversation config as it's no longer used
+
+## [0.3.3] - 2024-11-08
+
+### Breaking Changes
+- Loading images from 'path' has been removed for security reasons. Please specify images by passing an 'url'.
+
+### Added
+- Add podcast generation from topic "Latest News in U.S. Politics"
+- Integrate with 100+ LLM models (OpenAI, Anthropic, Google etc) for transcript generation
+- Integrate with Google's Multispeaker TTS model for high-quality audio generation
+- Deploy [REST API](https://github.com/souzatharsis/podcastfy/blob/main/usage/api.md) with FastAPI
+- Support for raw text as input
+- Add PRIVACY_POLICY.md
+- Start TESTIMONIALS.md
+- Add apps using Podcastfy to README.md
+
+### Fixed
+- #165 Fixed audio generation in Windows OS issue: Normalize path separators for cross-platform compatibility
+
 ## [0.2.3] - 2024-10-15
 
 ### Added

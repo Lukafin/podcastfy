@@ -21,17 +21,18 @@ Podcastfy uses the default conversation configuration stored in [podcastfy/conve
 
 | Parameter | Default Value | Type | Description |
 |-----------|---------------|------|-------------|
-| word_count | 2000 | int | Target word count for the generated content |
 | conversation_style | ["engaging", "fast-paced", "enthusiastic"] | list[str] | Styles to apply to the conversation |
 | roles_person1 | "main summarizer" | str | Role of the first speaker |
 | roles_person2 | "questioner/clarifier" | str | Role of the second speaker |
 | dialogue_structure | ["Introduction", "Main Content Summary", "Conclusion"] | list[str] | Structure of the dialogue |
-| podcast_name | "PODCASTFY" | str | Name of the podcast |
-| podcast_tagline | "YOUR PERSONAL GenAI PODCAST" | str | Tagline for the podcast |
+| podcast_name | "PODCASTIFY" | str | Name of the podcast |
+| podcast_tagline | "Your Personal Generative AI Podcast" | str | Tagline for the podcast |
 | output_language | "English" | str | Language of the output |
 | engagement_techniques | ["rhetorical questions", "anecdotes", "analogies", "humor"] | list[str] | Techniques to engage the audience |
-| creativity | 0 | int | Level of creativity/temperature (0-1) |
+| creativity | 1 | float | Level of creativity/temperature (0-1) |
 | user_instructions | "" | str | Custom instructions to guide the conversation focus and topics |
+| max_num_chunks | 7 | int | Maximum number of rounds of discussions in longform |
+| min_chunk_size | 600 | int | Minimum number of characters to generate a round of discussion in longform |
 
 ## Text-to-Speech (TTS) Settings
 
@@ -187,7 +188,7 @@ creativity: 0.7
 - The `word_count` is a target, and the AI may generate more or less than the specified word count. Low word counts are more likely to generate high-level discussions, while high word counts are more likely to generate detailed discussions.
 - The `output_language` defines both the language of the transcript and the language of the audio. Here's some relevant information:
   - Bottom-line: non-English transcripts are good enough but non-English audio is work-in-progress.
-  - Transcripts are generated using Google's Gemini 1.5 Pro, which supports 100+ languages by default.
+  - Transcripts are generated using Google's Gemini 1.5 Pro by default, which supports 100+ languages. Other user-defined models may or may not support non-English languages.
   - Audio is generated using `openai` (default), `elevenlabs`, `gemini`,or `edge` TTS models. 
     - The `gemini`(Google) TTS model is English only.
     - The `openai` TTS model supports multiple languages automatically, however non-English voices still present sub-par quality in my experience.
